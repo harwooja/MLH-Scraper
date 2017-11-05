@@ -6,7 +6,6 @@ class HackathonModel:
         self.url = url
         self.date = date
 
-
     def getName(self):
         return self.hackathonName
 

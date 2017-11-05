@@ -11,9 +11,8 @@ class Run:
     def __init__(self):
         self.scrapeData = Scraper()
         if self.scrapeData is not None:
-            webpagePayload = self.scrapeData.getPayload()
-            self.parser = Parse(webpagePayload)
-            self.parser.getEventMap()
+            self.parser = Parse(self.scrapeData.getPayload())
+            eventMap = self.parser.getEventMap()
             self.__cleanup()
         else:
             raise TypeError("Error: Invalid Payload")
